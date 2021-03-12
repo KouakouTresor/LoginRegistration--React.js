@@ -6,12 +6,10 @@ class List extends Component {
     };
 
     render() {
-
         return (
             <ul className="list-group col-3 mt-3 mb-3">
                     {this.props.taches.map((tache, i) => {
-                        return (
-                            
+                        return (      
                             <li className="list-group-item" key={i}> 
                                 <input   onChange={this.handleCheck} checked={tache.checked} data-index={i} type="checkbox" />
                                 <span>{tache.jour}</span>

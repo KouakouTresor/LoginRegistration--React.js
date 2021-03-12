@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 
 class Disconnect extends Component {
-
-
     render () {
         return(
             <div>

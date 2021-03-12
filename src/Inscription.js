@@ -7,11 +7,7 @@ class Inscription extends Component {
         confirmPassword: ""
 
     };
-
-
     state = this.initialState;
-
-
     handleChange = (event) => {
         const { name, value } = event.target
         this.setState({
@@ -19,9 +15,6 @@ class Inscription extends Component {
         });
 
     }
-
-
-
     handleSubmit = event => {
         event.preventDefault();
         if (this.state.password === this.state.confirmPassword) {
@@ -34,10 +27,7 @@ class Inscription extends Component {
         }
 
     }
-
-
-
-    render() {
+   render() {
         return (
             <div>
                 <form className="formInscription mt-5" onSubmit={this.handleSubmit} novalidate>

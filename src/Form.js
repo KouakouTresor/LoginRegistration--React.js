@@ -16,7 +16,6 @@ class Form extends Component {
         console.log(this.state)
     }
 
-
     submitForm = (event) => {
         event.preventDefault()
         this.props.addTache(this.state.tache, this.state.jour)

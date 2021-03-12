@@ -30,9 +30,6 @@ class Connect extends Component {
         this.setState(this.initialState);
     }
 
-
-
-
     render() {
         return (
             <div className="form">
