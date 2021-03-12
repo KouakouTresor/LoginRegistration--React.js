@@ -6,7 +6,7 @@ class Disconnect extends Component {
     render () {
         return(
             <div>
-                <button onClick={this.props.disconnect}>Disconnect</button>
+                <button className="btn btn-primary" onClick={this.props.disconnect}>Disconnect</button>
                 
             </div>
         )

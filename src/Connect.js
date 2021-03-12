@@ -1,30 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 
-class Connect extends Component{
+class Connect extends Component {
 
- 
+
 
     initialState = {
-                personAccount:"",
-                personPassword:""
-                };
-              
-    
+        personAccount: "",
+        personPassword: ""
+    };
+
+
 
     state = this.initialState;
 
 
     handleChange = (event) => {
-        const{name, value} = event.target;
+        const { name, value } = event.target;
         this.setState({
-            [name]:value
+            [name]: value
         });
-       
+
     }
 
     submit = (event) => {
-        const {personAccount, personPassword} = this.state;
+        const { personAccount, personPassword } = this.state;
         event.preventDefault();
         this.props.check(personAccount, personPassword);
         this.setState(this.initialState);
@@ -34,33 +34,22 @@ class Connect extends Component{
 
 
     render() {
-            return(
-                <div className="form">
-                    <form className = "formConnect" onSubmit= {this.submit}>
-                        <h2>Formulaire</h2>
-                        <fieldset className="connectSub">
-                                <legend>Contact</legend>
-                                <div className="nom">
-                                <img className="icon" src="https://www.iconfinder.com/data/icons/eldorado-user/40/user-512.png" alt="account"/><br/>
-
-                                    Account:<input type="text" placeholder="Nom.." name="personAccount"  onChange = {this.handleChange}  value={this.state.personAccount} required/> <br/>
-                                    Password:<input type="text" placeholder="Prenom.." name="personPassword" onChange = {this.handleChange}  value = {this.state.personPassword}required/><br/>
-           
-                                    
+        return (
+            <div className="form">
+                        <form className="formConnect" onSubmit={this.submit} novalidate>
+                            <h1 className="text-center mt-5">Connexion</h1>
+                                <div>
+                                    <img className="icon mt-3" src="https://www.iconfinder.com/data/icons/eldorado-user/40/user-512.png" alt="account" /><br />
+                                    Account:<input type="text" placeholder="Nom.." name="personAccount" className="form-control" onChange={this.handleChange} value={this.state.personAccount} required /><br />
+                                    Password:<input type="text" placeholder="Prenom.." name="personPassword" className="form-control" onChange={this.handleChange} value={this.state.personPassword} required /><br />
                                 </div>
-                                
+                                <input className="btn btn-success col" type="submit" value="Se connecter" />
+                        </form>           
+                    <button className="btn btn-light mt-1 col" onClick={this.props.addInscription}>Inscription</button>
 
-                               
-                                <input className="connect" type="submit" value="Se connecter" />
-                        </fieldset>
-
-                        
-                    </form>
-                    <button onClick={this.props.addInscription}>Inscription</button>
-                    
-                </div>
-            )
-        }
+            </div>
+        )
+    }
 }
 
-export default Connect; 
+export default Connect;

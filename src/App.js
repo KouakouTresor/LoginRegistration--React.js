@@ -119,20 +119,28 @@ addAccount = user => {
 
     
     return (
-    <div>
+    <div className="container-fluid">
       
       {
         this.state.userChecked.account !== undefined?
         <div>
+          <div className="row justify-content-center">
           <Form addTache= {this.addTache} newstate={this.state.persons}/>
+          </div>
+          <div className="row justify-content-center">
           <List taches={this.state.userTasksConnected} checkTache={this.checkTache} />
-          <button  onClick={this.removeTache}>Supprimer les tâches accomplies</button>
-          <button  onClick={this.removeAllTaches}>Supprimer toutes les tâches</button>
-          <button onClick={this.removeUser}>Remove User</button>
-          <Disconnect disconnect={this.handleDisconnect}/>
+          </div>
+          <div className="row justify-content-center">
+          <button className="btn btn-danger col-1 mr-1 " onClick={this.removeTache}>Supprimer les tâches accomplies</button>
+          <button className="btn btn-warning col-1 mr-1" onClick={this.removeAllTaches}>Supprimer toutes les tâches</button>
+          <button className="btn btn-info col-1 " onClick={this.removeUser}>Remove User</button>
+          </div>
+          <div className="">
+          <Disconnect className="row justify-content-center" disconnect={this.handleDisconnect}/>
+          </div>
         </div>
         :
-        <div>
+        <div className="row justify-content-center">
        
         
         {this.state.isInscriptionFormDisplayed === true ? <Inscription addAccount={this.addAccount}/> :  <Connect  addInscription= {this.addInscription} check={this.handleCheck} /> }
